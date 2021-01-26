@@ -1,50 +1,14 @@
-# Landing page using react and styled components...
+# Landing page using react and styled components.
 
-[The link to the video](https://www.youtube.com/watch?v=Nl54MJDR2p8&t=2439s&ab_channel=BrianDesign)
+This is landing page project from youtube tutorial on react with styled-components with my modifications.
+[The link to the youtube tutorial with the original landing](https://www.youtube.com/watch?v=Nl54MJDR2p8&t=2439s&ab_channel=BrianDesign)
 
-<!-- # Getting Started with Create React App
+## What I didn't like in the original project. That have to be fixed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. The original tutorial didn't have global styles and variables. Which I think is not a good practice even on a small project.
+2. I personaly didn't like that the component and the styles for this specific component are in different files. The reason is that this kind of architecture strategy creates confusion in imports and component naming.
+3. No shared components. I don't think I have to explain this one.
+4. The mobile menu does not close automaticly when you switch to desktop view. This is clearly a bad thing. I will try to find some sort of react why of doing 'on resize', may be with custom hooks.
+5. code duplication: 
+    - the links in the navbar and sidebar are hardcoded. Need to create some sort of bll to include all the info.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/). -->
