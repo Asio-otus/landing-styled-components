@@ -28,11 +28,10 @@ export const HeroSection = () => {
                     Sign up for a new account today and receive $250 in credit towards your next payment.
                 </HeroP>
                 <WrapperLS>
-                    <Button to={'signup'}
+                    <Button to='signup'
                             onMouseEnter={onHover}
                             onMouseLeave={onHover}
-                            primary={true}
-                            dark={true}>
+                            variant='primary'>
                         Get started {hover ? <ArrowForward/> : < ArrowRight/>}
                     </Button>
                 </WrapperLS>
