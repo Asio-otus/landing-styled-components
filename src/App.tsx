@@ -1,17 +1,21 @@
-import React from 'react';
-import {HomePage} from "./pages/Home";
-import {ThemeProvider} from "styled-components";
-import {GlobalStyles} from './global-styles/globalStyles';
-import {theme} from './global-styles/theme';
+import React, {useState} from 'react';
+import {Route, Switch} from 'react-router-dom';
+import {HomePage} from "./pages/HomePage";
+import {SignInPage} from "./pages/SignInPage";
 
 function App() {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const sidebarToggle = () => {
+        setIsOpen(!isOpen)
+    }
+
     return (
-        <div>
-            <ThemeProvider theme={theme}>
-                <GlobalStyles/>
-                <HomePage/>
-            </ThemeProvider>
-        </div>
+
+        <Switch>
+            <Route path='/' component={HomePage} exact/>
+            <Route path='/signin' component={SignInPage} exact/>
+        </Switch>
     );
 }
 

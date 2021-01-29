@@ -4,7 +4,8 @@ import {Navbar} from "../components/Navbar/Navbar";
 import {useState} from "react";
 import {HeroSection} from "../components/HeroSection/HeroSection";
 import {InfoSection} from "../components/InfoSection/InfoSection";
-import {homeSectionData} from "../components/InfoSection/Data";
+import {ServicesSection} from "../components/ServicesSection/ServicesSection";
+import {infoSectionDataOne, infoSectionDataThree, infoSectionDataTwo} from "../BLL/InfoSectionData";
 
 export const HomePage = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -18,7 +19,10 @@ export const HomePage = () => {
             <Sidebar isOpen={isOpen} sidebarToggle={sidebarToggle}/>
             <Navbar sidebarToggle={sidebarToggle}/>
             <HeroSection/>
-            <InfoSection data={homeSectionData}/>
+            <InfoSection data={infoSectionDataOne}/>
+            <InfoSection data={infoSectionDataTwo}/>
+            <InfoSection data={infoSectionDataThree}/>
+            <ServicesSection/>
         </>
     )
 }

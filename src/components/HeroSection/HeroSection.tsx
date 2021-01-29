@@ -31,7 +31,9 @@ export const HeroSection = () => {
                     <Button to='signup'
                             onMouseEnter={onHover}
                             onMouseLeave={onHover}
-                            variant='primary'>
+                            $type={'primary'}
+                            $style={'light'}
+                            $size={'big'}>
                         Get started {hover ? <ArrowForward/> : < ArrowRight/>}
                     </Button>
                 </WrapperLS>

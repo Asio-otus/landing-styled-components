@@ -1,46 +1,46 @@
 import React from "react";
 import styled from "styled-components";
-import {InfoSectionDataType} from "./Data";
+import {InfoSectionDataType} from "../../BLL/InfoSectionData";
 import {Button} from "../../components-shared/Button";
 
 type InfoSectionPropsType = {
     data: InfoSectionDataType
 }
 
-export const InfoSection: React.FC<InfoSectionPropsType> = (
-    {data}
-) => {
-    debugger
+export const InfoSection: React.FC<InfoSectionPropsType> = ({data}) => {
     return (
         <>
-            <InfoContainer lightBg={data.lightBg} id={data.id}>
-                <InfoWrapper>
-                    <InfoRow imgStart={data.imgStart}>
-                        <Column1>
-                            <TextWrapper>
-                                <TopLine>{data.topLine}</TopLine>
-                                <Heading lightText={data.lightText}>{data.headline}</Heading>
-                                <Subtitle darkText={data.darkText}>{data.description}</Subtitle>
-                                <BtnWrap>
-                                    <Button to='home'>
+            <ContainerL lightBg={data.lightBg} id={data.id}>
+                <InfoWrapperL>
+                    <RowL imgStart={data.imgStart}>
+                        <ColumnL1>
+                            <TextWrapperL>
+                                <TopLineL>{data.topLine}</TopLineL>
+                                <HeadingL lightText={data.lightText}>{data.headline}</HeadingL>
+                                <SubtitleL darkText={data.darkText}>{data.description}</SubtitleL>
+                                <ButtonWrapperL>
+                                    <Button to='home'
+                                            $type={data.buttonType}
+                                            $style={data.buttonStyle}
+                                            $size={data.buttonSize}>
                                         {data.buttonLabel}
                                     </Button>
-                                </BtnWrap>
-                            </TextWrapper>
-                        </Column1>
-                        <Column2>
-                            <ImgWrap>
-                                <Img src={data.img} alt={data.alt} />
-                            </ImgWrap>
-                        </Column2>
-                    </InfoRow>
-                </InfoWrapper>
-            </InfoContainer>
+                                </ButtonWrapperL>
+                            </TextWrapperL>
+                        </ColumnL1>
+                        <ColumnL2>
+                            <ImageWrapperL>
+                                <Img src={data.img} alt={data.alt}/>
+                            </ImageWrapperL>
+                        </ColumnL2>
+                    </RowL>
+                </InfoWrapperL>
+            </ContainerL>
         </>
     )
 }
 
-const InfoContainer = styled.div<{lightBg: boolean}>`
+const ContainerL = styled.div<{ lightBg: boolean }>`
   color: #fff;
   background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
 
@@ -49,7 +49,7 @@ const InfoContainer = styled.div<{lightBg: boolean}>`
   }
 `
 
-const InfoWrapper = styled.div`
+const InfoWrapperL = styled.div`
   display: grid;
   z-index: 1;
   height: 860px;
@@ -61,7 +61,7 @@ const InfoWrapper = styled.div`
   justify-content: center;
 `
 
-const InfoRow = styled.div<{imgStart: boolean}>`
+const RowL = styled.div<{ imgStart: boolean }>`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
@@ -72,25 +72,25 @@ const InfoRow = styled.div<{imgStart: boolean}>`
   }
 `
 
-const Column1 = styled.div`
+const ColumnL1 = styled.div`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col1;
 `
 
-const Column2 = styled.div`
+const ColumnL2 = styled.div`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col2;
 `
 
-const TextWrapper = styled.div`
+const TextWrapperL = styled.div`
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
 `
 
-const TopLine = styled.div`
+const TopLineL = styled.div`
   color: #01bf71;
   font-size: 16px;
   line-height: 16px;
@@ -100,7 +100,7 @@ const TopLine = styled.div`
   margin-bottom: 16px;
 `
 
-const Heading = styled.h1<{lightText: boolean}>`
+const HeadingL = styled.h1<{ lightText: boolean }>`
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
@@ -112,7 +112,7 @@ const Heading = styled.h1<{lightText: boolean}>`
   }
 `
 
-const Subtitle = styled.p<{darkText: boolean}>`
+const SubtitleL = styled.p<{ darkText: boolean }>`
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
@@ -120,12 +120,12 @@ const Subtitle = styled.p<{darkText: boolean}>`
   color: ${({darkText}) => (darkText ? '#010606' : '#fff')};
 `
 
-const BtnWrap = styled.div`
+const ButtonWrapperL = styled.div`
   display: flex;
   justify-content: flex-start;
 `
 
-const ImgWrap = styled.div`
+const ImageWrapperL = styled.div`
   max-width: 555px;
   height: 100%;
 `
